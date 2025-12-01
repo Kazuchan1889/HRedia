@@ -1,21 +1,26 @@
-# Absensi Frontend
+# Absensi Backend
+
+Environment variables: copy `.env.example` to `.env` and adjust if needed.
 
 Install dependencies:
 
 ```
-cd FE
+cd BE
 npm install
 ```
 
-Run dev server:
+Run migrations (creates tables and seeds admin):
+
+```
+npm run migrate
+```
+
+Run server:
 
 ```
 npm run dev
 ```
 
-The frontend expects backend API at `http://localhost:4000`.
-
-Notes about camera & attendance:
-- The "Check In" and "Check Out" actions require taking a photo via your device camera. Allow camera permission in the browser when prompted.
-- The UI enforces one check-in, one break, and one check-out per day. Photos are stored as base64 strings in the backend for this demo.
-
+Default accounts created by migrate:
+- admin / admin123 (role: admin)
+- user1 / user123 (role: user)
